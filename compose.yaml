@@ -1,0 +1,13 @@
+services:
+  ssh-server:
+    build:
+      context: ./lab
+    ports:
+      - "127.0.0.1:2222:22"
+    mem_limit: 256m
+    cpus: 1.0
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
